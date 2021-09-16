@@ -1,0 +1,32 @@
+{
+  "name": "webbasics",
+  "version": "1.0.0",
+  "description": "Repository for web development projects in 3 term",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DHushchin/WebBasics.git"
+  },
+  "author": "Hushchin Dmytro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DHushchin/WebBasics/issues"
+  },
+  "homepage": "https://github.com/DHushchin/WebBasics#readme",
+  "devDependencies": {
+    "husky": "^7.0.2",
+    "prettier": "2.4.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "YOUR_COMMAND_HERE",
+      "pre-push": "YOUR_COMMAND_HERE"
+    }
+  }
+}

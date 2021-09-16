@@ -30,9 +30,13 @@
     }
   },
   "lint-staged": {
-    "*{js, json, html, css, md}": [
-      "prettier --single-quote --write",
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "save-dev": "0.0.1-security"
   }
 }

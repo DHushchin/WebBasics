@@ -19,14 +19,20 @@
   "homepage": "https://github.com/DHushchin/WebBasics#readme",
   "devDependencies": {
     "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "2.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "YOUR_COMMAND_HERE",
-      "pre-push": "YOUR_COMMAND_HERE"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*{js, json, html, css, md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }

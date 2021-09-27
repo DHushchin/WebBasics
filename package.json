@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Repository for web development projects in 3 term",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
@@ -36,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "nodemailer": "^6.6.5",
     "save-dev": "0.0.1-security"
   }
 }

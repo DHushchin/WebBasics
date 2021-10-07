@@ -4,7 +4,8 @@
     --font-Mont: "Montserrat", sans-serif;
     --color-header-footer: rgba(13, 0, 192, 0.753);
     --color-aside: rgba(255, 238, 0, 0.801);
-    --color-div: rgba(7, 206, 0, 0.877);
+    --color-div-green: rgba(7, 206, 0, 0.877);
+    --color-div-grey: rgb(167, 167, 167);
 }
 
 table td {
@@ -62,7 +63,7 @@ header>p {
     width: 40%;
     height: 100%;
     margin: 0 10% 0 0;
-    background-color: var(--color-div);
+    background-color: var(--color-div-green);
 }
 
 .right-place>aside {
@@ -92,7 +93,7 @@ header>p {
 }
 
 .left {
-    background-color: rgb(167, 167, 167);
+    background-color: var(--color-div-grey);
     display: flex;
     flex-direction: column;
 }
@@ -112,7 +113,7 @@ header>p {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--color-div);
+    background-color: var(--color-div-green);
     margin: 0px auto;
 }
 
@@ -166,7 +167,7 @@ header>p {
 }
 
 .right {
-    background-color: var(--color-div);
+    background-color: var(--color-div-green);
 }
 
 footer {
@@ -186,7 +187,7 @@ footer>h3 {
 
 a:hover {
     transition: 0.5s;
-    color: rgb(255, 255, 255);
+    color: var(--color-div-grey);
 }
 
 main>p, .left>p, .right>p {
@@ -244,3 +245,4 @@ aside>img {
     .cercle__info>p {
         font-size: 14px;
     }
+}

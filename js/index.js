@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if(document.cookie) {
                 this.clearForm();
 
-                const saveOrNot = confirm(document.cookie + ' - save cookie?')
+                const saveOrNot = confirm(document.cookie + ' - save cookie?');
                 
                 if(!saveOrNot) {
                     this.deleteCookie();

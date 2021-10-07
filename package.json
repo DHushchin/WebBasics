@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "Repository for web development projects in 3 term",
   "main": "index.js",
-  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "fix",
+    "formatL": "check",
+    "stylelint": "fix",
+    "eslint": "fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DHushchin/WebBasics.git"
   },
   "author": "Hushchin Dmytro",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DHushchin/WebBasics/issues"
   },
@@ -22,19 +25,18 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "2.4.1",
+    "sonarjs": "^1.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": ["lint-staged"]
     }
   },
   "lint-staged": {
-    "**/*.{js,jsx,css,html, md}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{js,jsx}": ["eslint --fix"],
+    "*.{md,mdx,json,css,scss,yaml,yml}": ["prettier --write"]
   },
   "dependencies": {
     "nodemailer": "^6.6.5",

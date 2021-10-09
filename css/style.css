@@ -2,10 +2,9 @@
 
 :root {
     --font-Mont: "Montserrat", sans-serif;
-    --color-header-footer: rgba(13, 0, 192, 0.753);
-    --color-aside: rgba(255, 238, 0, 0.801);
-    --color-div-green: rgba(7, 206, 0, 0.877);
-    --color-div-grey: rgb(167, 167, 167);
+    --color-header-footer: #D4A59A;
+    --color-aside: #0367a6;
+    --light-color: #E4C580;
 }
 
 table td {
@@ -63,7 +62,7 @@ header>p {
     width: 40%;
     height: 100%;
     margin: 0 10% 0 0;
-    background-color: var(--color-div-green);
+    background-color: var(--light-color);
 }
 
 .right-place>aside {
@@ -93,31 +92,31 @@ header>p {
 }
 
 .left {
-    background-color: var(--color-div-grey);
+    background-color: var(--light-color);
     display: flex;
     flex-direction: column;
 }
 
 .left>form {
-    height: 50%;
+    height: 100%;
     width: 100%;
     text-align: center;
 }
 
-.cercle {
+.circle {
     width: 100%;
     height: 50%;
 }
 
-.cercle__block {
+.circle__block {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--color-div-green);
+    background-color: var(--color-aside);
     margin: 0px auto;
 }
 
-.cercle__info {
+.circle__info {
     text-align: center;
 }
 
@@ -138,10 +137,10 @@ header>p {
 }
 
 .con-form>button {
-    background-color: #0367a6;
-    background-image: linear-gradient(90deg, #0367a6 0%, #008997 74%);
+    background-color: var(--color-aside);
+    background-image: linear-gradient(90deg, var(--color-aside) 0%, #008997 74%);
     border-radius: 25px;
-    border: 1px solid #0367a6;
+    border: 1px solid var(--color-aside);
     color: #e9e9e9;
     cursor: pointer;
     font-size: 16px;
@@ -160,14 +159,60 @@ header>p {
     border: none;
     width: 80%;
     font-family: var(--font-Mont);
-    font-size: 80%;
-    padding: 5%;
+    font-size: 100%;
+    padding: 4%;
     height: 5%;
     margin: 5% auto;
 }
 
+.sign-up-form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+  }
+
+.sign-up-form>h2 {
+    line-height: 0%;
+    font-family: var(--font-Mont);  
+}
+
+.sign-up-form>button {
+    background-color: var(--color-aside);
+    background-image: linear-gradient(90deg, var(--color-aside) 0%, #008997 74%);
+    border-radius: 25px;
+    border: 1px solid var(--color-aside);
+    color: #e9e9e9;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--font-Mont);
+    letter-spacing: 0.1rem;
+    padding: auto;
+    text-transform: uppercase;
+    width: 60%;
+    height: 10%;
+    margin: 3% auto 0px;
+}
+
+.sign-up-form>input {
+    background-color: #fff;
+    border: none;
+    width: 70%;
+    font-family: var(--font-Mont);
+    font-size: 100%;
+    padding: 4%;
+    height: 2%;
+    margin: 3% auto;
+    border-radius: 10px;
+}
+
 .right {
-    background-color: var(--color-div-green);
+    background-color: var(--light-color);
 }
 
 footer {
@@ -187,7 +232,7 @@ footer>h3 {
 
 a:hover {
     transition: 0.5s;
-    color: var(--color-div-grey);
+    color: var(--light-color);
 }
 
 main>p, .left>p, .right>p {
@@ -242,7 +287,7 @@ aside>img {
         font-size: 12px;
     }
 
-    .cercle__info>p {
+    .circle__info>p {
         font-size: 14px;
     }
 }

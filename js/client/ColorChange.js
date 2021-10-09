@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const cercleValues = document.querySelector('.cercle__info');
+    const cercleValues = document.querySelector('.circle__info');
 
     const area = new AreaCercle(cercleValues);
 
@@ -152,7 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     block.addEventListener('click', function(event){
         if(event.target.className === 'colorBlock') {
-            ee.emit('changeColor', event.target.innerHTML);
+            if(event.target.innerHTML == 'Light') {
+                ee.emit('changeColor', '#E4C580');
+            }
+            else {
+                ee.emit('changeColor', event.target.innerHTML);
+            }
         }
     });
 })

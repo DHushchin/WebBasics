@@ -34,19 +34,24 @@
         <nav class="navigation">
           <a href="index.html" alt="Menu">Menu</a>
           <a href="catalog.html" alt="Catalog">Catalog</a>
-          <a href="#" alt="Blog">Blog</a>
+          <a href="#" alt="Sign up">Sign up</a>
           <a href="contacts.html" alt="Contacts">Contacts</a>
           <a href="about.html" alt="About us">About us</a>
         </nav>
       </aside>
       <div class="info">
         <div class="left">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-            expedita reprehenderit quo accusamus, ipsam odit minima sequi nisi
-            reiciendis, eum possimus exercitationem pariatur praesentium
-            temporibus aut nemo corrupti alias adipisci?
-          </p>
+          <form class="form" action="sign_up.html">
+            <div class="sign-up-form">
+              <h2 class="form__title">Sign up</h2>
+              <input type="text" name="name" placeholder="Name"/>
+              <input type="text" name="surname" placeholder="Surname"/>
+              <input type="text" name="age" placeholder="Age"/>
+              <input type="text" name="email" placeholder="Email"/>
+              <input type="text" name="phone" placeholder="Phone number"/>
+              <button>Send</button>
+            </div>
+          </form>
         </div>
         <div class="right">
           <p>
@@ -61,6 +66,6 @@
   <footer>
     <h3>Dmytro Hushchin</h3>
   </footer>
+  <script src="./js/client/ReadForm.js"></script>
 </body>
-
 </html>

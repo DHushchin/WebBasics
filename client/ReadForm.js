@@ -13,6 +13,7 @@ const callApi = ({ data, method = HttpMethods.GET }) => {
         body: data ? JSON.stringify(data) : null,
     }).then((response) => response.json());
     console.log(response.json);
+    console.log(JSON.stringify(data));
 };
 
 const getFormData = (form) => {
@@ -45,7 +46,7 @@ const sendHandler = async () => {
     if (response.error) {
         throw response;
     } else {
-        clearFields(form);
+        //clearFields(form);
     }
 };
 

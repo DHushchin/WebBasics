@@ -6,8 +6,9 @@ const HttpMethods = {
 };
 
 const callApi = ({ data, method = HttpMethods.GET }) => {
-    return fetch(`${API_ROOT}`, {
+    return fetch(`${API_ROOT}/MessageHandler`, {
         method,
+        //'Access-Control-Allow-Origin': `${API_ROOT}`,
         'Content-Type': data ? 'application/json' : null,
         body: data ? JSON.stringify(data) : null,
     }).then((response) => response.json());
@@ -50,6 +51,5 @@ const sendHandler = async () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-
     sendHandler();
 });

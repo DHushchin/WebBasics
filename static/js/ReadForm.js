@@ -6,7 +6,7 @@ const HttpMethods = {
 const form = document.querySelector('.form');
 
 const callApi = ({ data, method = HttpMethods.GET }) => {
-    return fetch(`/mail`, {
+    return fetch(`https://dhushchin-first-website.herokuapp.com/mail`, {
         method,
         body: data ? JSON.stringify(data) : null,
         headers: {

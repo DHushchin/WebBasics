@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <title>MyFirstPage</title>
   <base href="/">
 </head>
@@ -19,7 +19,7 @@
   <div class="container">
     <section class="left-place">
       <aside>
-        <img src="img/1.jpg">
+        <img src="{{ url_for('static', filename='img/phone.jpg') }}" alt="Phone image">
       </aside>
       <main>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, perspiciatis earum odit 
@@ -30,16 +30,16 @@
     <section class="right-place">
       <aside>
         <nav class="navigation">
-          <a href="#" alt="Menu">Menu</a>
-          <a href="catalog.html" alt="Catalog">Catalog</a>
-          <a href="sign_up.html" alt="Sign up">Sign up</a>
-          <a href="contacts.html" alt="Contacts">Contacts</a>
-          <a href="about.html" alt="About us">About us</a>
+          <a href="/">Menu</a>
+          <a href="/catalog">Catalog</a>
+          <a href="/sign_up">Sign up</a>
+          <a href="/contacts">Contacts</a>
+          <a href="/about">About us</a>
         </nav>
       </aside>
       <div class="info">
         <div class="left">
-          <form action="./index.html">
+          <form action="/index">
             <div class="con-form">
               <h2 class="form__title">Minimal digit</h2>
               <input placeholder="Enter some number"/>
@@ -72,6 +72,6 @@
   <footer>
     <h3>Dmytro Hushchin</h3>
   </footer>
-  <script type="module" src="./client/ColorChange.js"></script>
+  <script src="{{ url_for('static', filename='js/ColorChange.js') }}"></script>
 </body>
 </html>

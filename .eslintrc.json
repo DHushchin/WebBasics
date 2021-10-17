@@ -1,0 +1,8 @@
+{
+    "extends": ["plugin:sonarjs/recommended", "metarhia"],
+    "plugins": ["sonarjs"],
+    "rules": {
+      "sonarjs/elseif-without-else": 1,
+      "prefer-destructuring": 1
+    }
+}

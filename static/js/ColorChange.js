@@ -1,6 +1,24 @@
 'use strict'
 
-import EventEmitter from './EventEmitter.js';
+class EventEmitter {
+    constructor() {
+        this.events = {}; // hash of array of function
+    }
+
+    on(name, fn) {
+        if (this.events[name])
+            this.events[name].push(fn);
+        else
+            this.events[name] = [fn];
+    }
+    emit(name, ...data) {
+        if(this.events[name]) {
+            this.events[name].forEach(element => {
+                element(...data);
+            });
+        }
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1 завдання - Поміняйте місцями тексти, позначені «1» та «6»
@@ -28,36 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
     скрипті, і виводить отриманий результат в кінці 
     контенту в блоці «5». */
 
-    class AreaCercle {
+    class AreaCircle {
         constructor(val) {
             this.val = val;
             this.radius = 20;
             this.pi = Math.PI;
         }
 
-        areaComput() {
+        areaCompute() {
             return Math.round(this.pi*Math.pow(this.radius, 2))
         }
 
         showResult() {
             this.val.querySelector('p').innerHTML = `Radius: ${this.radius}, PI: ${this.pi}`;
-            this.val.querySelector('h3').innerHTML = `Answer: ${this.areaComput()}`;
+            this.val.querySelector('h3').innerHTML = `Answer: ${this.areaCompute()}`;
         }
     }
 
-    const cercleValues = document.querySelector('.circle__info');
+    const circleValues = document.querySelector('.circle__info');
 
-    const area = new AreaCercle(cercleValues);
+    const area = new AreaCircle(circleValues);
 
     area.showResult();
 
-    /* 3 завдання - Напишіть скрипт, який знаходить мінімальну 
+    /* 3 завдання - Напишіть скрипт, який знаходить мінімальну
     цифру у заданому натуральному числі, беручи це 
     число із відповідної форми в блоці «5», а отриманий 
     результат виводить за допомогою діалогового вікна 
     і зберігає в куках */
 
-    class FindMinNumber {
+class FindMinNumber {
         constructor(num) {
             this.num = num;
         }
@@ -79,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.clearForm();
 
                 const saveOrNot = confirm(document.cookie + ' - save cookie?');
-                
+
                 if(!saveOrNot) {
                     this.deleteCookie();
                 } else {
@@ -117,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(find.findNum());
     })
 
+
     /*4 завдання - Напишіть скрипт, який при настанні події select змінює колір тексту блоку «6» на 
     вказаний користувачем і зберігає відповідне значення кольору в локальному 
     сховищі броузера так, щоб при наступному відкриванні сторінки значення 
@@ -152,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     block.addEventListener('click', function(event){
         if(event.target.className === 'colorBlock') {
-            if(event.target.innerHTML == 'Light') {
+            if(event.target.innerHTML === 'Light') {
                 ee.emit('changeColor', '#E4C580');
             }
             else {

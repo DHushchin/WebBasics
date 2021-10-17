@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <title>MyFirstPage</title>
   <base href="/">
 </head>
@@ -19,7 +19,7 @@
   <div class="container">
     <section class="left-place">
       <aside>
-        <img src="img/1.jpg">
+        <img src="{{ url_for('static', filename='img/phone.jpg') }}" alt="Phone image">
       </aside>
       <main>
         <ul>
@@ -32,16 +32,16 @@
     <section class="right-place">
       <aside>
         <nav class="navigation">
-          <a href="index.html" alt="Menu">Menu</a>
-          <a href="catalog.html" alt="Catalog">Catalog</a>
-          <a href="#" alt="Sign up">Sign up</a>
-          <a href="contacts.html" alt="Contacts">Contacts</a>
-          <a href="about.html" alt="About us">About us</a>
+          <a href="/index">Menu</a>
+          <a href="/catalog">Catalog</a>
+          <a href="/">Sign up</a>
+          <a href="/contacts">Contacts</a>
+          <a href="/about">About us</a>
         </nav>
       </aside>
       <div class="info">
         <div class="left">
-          <form class="form" action="sign_up.html">
+          <form class="form" action="/sign_up">
             <div class="sign-up-form">
               <h2 class="form__title">Sign up</h2>
               <input type="text" name="name" placeholder="Name"/>
@@ -66,6 +66,6 @@
   <footer>
     <h3>Dmytro Hushchin</h3>
   </footer>
-  <script src="./client/ReadForm.js"></script>
+  <script src="{{ url_for('static', filename='js/ReadForm.js') }}"></script>
 </body>
 </html>

@@ -1,19 +1,19 @@
-const API_ROOT = 'https://web-basics-dhushchin.vercel.app/api';
-
 const HttpMethods = {
     GET: 'GET',
     POST: 'POST',
 };
 
+const form = document.querySelector('.form');
+
 const callApi = ({ data, method = HttpMethods.GET }) => {
-    return fetch(`${API_ROOT}/MessageHandler`, {
+    return fetch(`/mail`, {
         method,
-        //'Access-Control-Allow-Origin': `${API_ROOT}`,
-        'Content-Type': data ? 'application/json' : null,
         body: data ? JSON.stringify(data) : null,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          }
     }).then((response) => response.json());
-    console.log(response.json);
-    console.log(JSON.stringify(data));
 };
 
 const getFormData = (form) => {
@@ -21,8 +21,6 @@ const getFormData = (form) => {
     new FormData(form).forEach((value, key) => {
         formData[key] = value;
     });
-    console.log(formData);
-    
     return formData;
 };
 
@@ -32,8 +30,6 @@ const clearFields = (form) => {
         field.value = '';
     }
 };
-
-const form = document.querySelector('.form');
 
 const sendHandler = async () => {
     const formData = getFormData(form);
@@ -46,9 +42,12 @@ const sendHandler = async () => {
     if (response.error) {
         throw response;
     } else {
-        //clearFields(form);
+        clearFields(form);
+        alert(response);
     }
 };
+
+
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();

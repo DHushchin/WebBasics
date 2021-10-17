@@ -1,5 +1,4 @@
-import smtplib
-import os
+import smtplib, os
 from email.mime.text import MIMEText
 from validators import email
 from phonenumbers import parse, is_valid_number
@@ -46,7 +45,7 @@ class Mailer:
             msg["From"] = sender
             msg["To"] = self.data['email']
             msg["Subject"] = "Your sign up!"
-            server.sendmail(sender, sender, msg.as_string())
+            server.sendmail(sender, self.data['email'], msg.as_string())
             return "The message was sent successfully!"
         except Exception as _ex:
             return f"{_ex}\nCheck your login or password please!"

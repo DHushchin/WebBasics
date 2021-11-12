@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         changePlace() {
-            [this.text1.innerHTML, this.text2.innerHTML] = [this.text2.innerHTML, this.text1.innerHTML]
+            [this.text1.innerText, this.text2.innerText] = [this.text2.innerText, this.text1.innerText]
         }
     } 
 
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         showResult() {
-            this.val.querySelector('p').innerHTML = `Radius: ${this.radius}, PI: ${this.pi}`;
-            this.val.querySelector('h3').innerHTML = `Answer: ${this.areaCompute()}`;
+            this.val.querySelector('p').innerText = `Radius: ${this.radius}, PI: ${this.pi}`;
+            this.val.querySelector('h3').innerText = `Answer: ${this.areaCompute()}`;
         }
     }
 
@@ -148,7 +148,12 @@ class FindMinNumber {
         }
 
         saveToLocalStore(color) {
-            localStorage.setItem('colorBlock', color);
+            try {
+                localStorage.setItem('colorBlock', color);
+                return;
+            } catch(err) {
+                throw new Error(`Error save to localstorage -> ${err}`);
+            }
         }
         
         change(color) {
@@ -158,6 +163,7 @@ class FindMinNumber {
     }
 
     const block = document.querySelector('.right');
+    const colors = document.querySelectorAll('.right p');
 
     const changeCol = new ChangeColor(block);
 
@@ -169,14 +175,18 @@ class FindMinNumber {
         changeCol.change(data);
     });
 
-    block.addEventListener('click', function(event){
-        if(event.target.className === 'colorBlock') {
-            if(event.target.innerHTML === 'Light') {
-                ee.emit('changeColor', '#E4C580');
-            }
-            else {
-                ee.emit('changeColor', event.target.innerHTML);
-            }
+    colors.forEach((elem) => {
+        try {
+            elem.addEventListener('click', function(event){
+                if(event.target.innerText === 'Light') {
+                    ee.emit('changeColor', '#E4C580');
+                }
+                else {
+                    ee.emit('changeColor', event.target.innerText);
+                }
+            });
+        } catch(err) {
+            throw new Error(err);
         }
-    });
+    })
 })

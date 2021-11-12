@@ -463,6 +463,5 @@ pip-selfcheck.json
 .ionide
 
 husky install/
-
-
 .vercel
+.idea/

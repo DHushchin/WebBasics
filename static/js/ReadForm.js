@@ -13,7 +13,7 @@ const callApi = ({ data, method = HttpMethods.GET }) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
           }
-    }).then((response) => response.json());
+    }).then((response) => response.json()).catch(err => console.err(`Error fetch request -> ${err}`));
 };
 
 const getFormData = (form) => {
@@ -32,18 +32,23 @@ const clearFields = (form) => {
 };
 
 const sendHandler = async () => {
-    const formData = getFormData(form);
+    try {
+        const formData = getFormData(form);
 
-    const response = await callApi({
-        data: formData,
-        method: HttpMethods.POST,
-    });
+        const response = await callApi({
+            data: formData,
+            method: HttpMethods.POST,
+        });
 
-    if (response.error) {
-        throw response;
-    } else {
-        clearFields(form);
-        alert(response);
+        if (response.error) {
+            throw response;
+        } else {
+            clearFields(form);
+            alert(response);
+            return;
+        }
+    } catch(err) {
+        throw new Error(err);
     }
 };
 

@@ -1,77 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>MyFirstPage</title>
+    <base href="/" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <title>MyFirstPage</title>
-  <base href="/">
-</head>
-
-<body>
-  <header>
-    <h1>Welcome here!</h1>
-    <p><b>Choose your color</b></p>
-  </header>
-  <div class="container">
-    <section class="left-place">
-      <aside>
-        <img src="{{ url_for('static', filename='img/phone.jpg') }}" alt="Phone image">
-      </aside>
-      <main>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, perspiciatis earum odit 
-          exercitationem mollitia nesciunt ullam quod necessitatibus reprehenderit praesentium laboriosam, 
-          delectus officiis tempora, impedit ipsa explicabo. Quos, incidunt voluptate?</p>
-      </main>
-    </section>
-    <section class="right-place">
-      <aside>
-        <nav class="navigation">
-          <a href="/">Menu</a>
-          <a href="/catalog">Catalog</a>
-          <a href="/sign_up">Sign up</a>
-          <a href="/contacts">Contacts</a>
-          <a href="/about">About us</a>
-        </nav>
-      </aside>
-      <div class="info">
-        <div class="left">
-          <form action="/index">
-            <div class="con-form">
-              <h2 class="form__title">Minimal digit</h2>
-              <input placeholder="Enter some number"/>
-              <button>Submit</button>
-            </div>
-          </form>
-          <div class="circle">
-            <div class="circle__block"></div>
-            <div class="circle__info">
-              <p></p>
-              <h3></h3>
+  <body>
+    <header>
+      <h1>Welcome here!</h1>
+      <p><b>Choose your color</b></p>
+    </header>
+    <div class="container">
+      <section class="left-place">
+        <aside>
+          <img
+            src="{{ url_for('static', filename='img/phone.jpg') }}"
+            alt="Phone image"
+          />
+        </aside>
+        <main>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+            perspiciatis earum odit exercitationem mollitia nesciunt ullam quod
+            necessitatibus reprehenderit praesentium laboriosam, delectus
+            officiis tempora, impedit ipsa explicabo. Quos, incidunt voluptate?
+          </p>
+        </main>
+      </section>
+      <section class="right-place">
+        <aside>
+          <nav class="navigation">
+            <a href="/">Menu</a>
+            <a href="/catalog">Catalog</a>
+            <a href="/sign_up">Sign up</a>
+            <a href="/contacts">Contacts</a>
+            <a href="/about">About us</a>
+          </nav>
+        </aside>
+        <div class="info">
+          <div class="left">
+            <form action="/index">
+              <div class="con-form">
+                <h2 class="form__title">Minimal digit</h2>
+                <input placeholder="Enter some number" />
+                <button>Submit</button>
+              </div>
+            </form>
+            <div class="circle">
+              <div class="circle__block"></div>
+              <div class="circle__info">
+                <p></p>
+                <h3></h3>
+              </div>
             </div>
           </div>
+          <div class="right">
+            <p>Some funny text about page</p>
+            <ul>
+              <li>
+                <p>Red</p>
+                <p></p>
+              </li>
+              <li><p>Purple</p></li>
+              <li><p>Blue</p></li>
+              <li>
+                <p>Purple</p>
+                <p></p>
+              </li>
+              <li><p>Orange</p></li>
+              <li><p>Grey</p></li>
+              <li><p>Light</p></li>
+            </ul>
+          </div>
         </div>
-        <div class="right">
-          <p>Some funny text about page</p>
-          <ul>
-            <li><p>Red<p></li>
-            <li><p>Purple</p></li>
-            <li><p>Blue</p></li>
-            <li><p>Purple<p></li>
-            <li><p>Orange</p></li>
-            <li><p>Grey</p></li>
-            <li><p>Light</p></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-  <footer>
-    <h3>Dmytro Hushchin</h3>
-  </footer>
-  <script src="{{ url_for('static', filename='js/ColorChange.js') }}"></script>
-</body>
+      </section>
+    </div>
+    <footer>
+      <h3>Dmytro Hushchin</h3>
+    </footer>
+    <script src="{{ url_for('static', filename='js/ColorChange.js') }}"></script>
+  </body>
 </html>

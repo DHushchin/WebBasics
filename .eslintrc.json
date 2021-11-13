@@ -1,8 +1,12 @@
 {
-    "extends": ["plugin:sonarjs/recommended", "metarhia"],
-    "plugins": ["sonarjs"],
-    "rules": {
-      "sonarjs/elseif-without-else": 1,
-      "prefer-destructuring": 1
-    }
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "rules": {}
 }

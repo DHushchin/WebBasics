@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>MyFirstPage</title>
+    <base href="/" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <title>MyFirstPage</title>
-  <base href="/">
-</head>
-
-<body>
-  <header>
-    <h1>Welcome here!</h1>
-    <p>Some funny text about page</p>
-  </header>
-  <div class="container">
-    <section class="left-place">
-      <aside>
-        <img src="{{ url_for('static', filename='img/phone.jpg') }}" alt="Phone image">
-      </aside>
-      <main>
-        <ul>
-          <li><p>First item<p></li>
-          <li><p>Second item</p></li>
-          <li><p>Third item</p></li>
-        </ul>
-      </main>
-    </section>
-    <section class="right-place">
-      <aside>
-        <nav class="navigation">
-          <a href="/index">Menu</a>
-          <a href="/catalog">Catalog</a>
-          <a href="/">Sign up</a>
-          <a href="/contacts">Contacts</a>
-          <a href="/about">About us</a>
-        </nav>
-      </aside>
-      <div class="info">
-        <div class="left">
-          <form class="form" action="/sign_up">
-            <div class="sign-up-form">
-              <h2 class="form__title">Sign up</h2>
-              <input type="text" name="name" placeholder="Name"/>
-              <input type="text" name="surname" placeholder="Surname"/>
-              <input type="text" name="age" placeholder="Age"/>
-              <input type="text" name="email" placeholder="Email"/>
-              <input type="text" name="phone" placeholder="Phone number"/>
-              <button>Send</button>
-            </div>
-          </form>
+  <body>
+    <header>
+      <h1>Welcome here!</h1>
+      <p>Some funny text about page</p>
+    </header>
+    <div class="container">
+      <section class="left-place">
+        <aside>
+          <img
+            src="{{ url_for('static', filename='img/phone.jpg') }}"
+            alt="Phone image"
+          />
+        </aside>
+        <main>
+          <ul>
+            <li>
+              <p>First item</p>
+              <p></p>
+            </li>
+            <li><p>Second item</p></li>
+            <li><p>Third item</p></li>
+          </ul>
+        </main>
+      </section>
+      <section class="right-place">
+        <aside>
+          <nav class="navigation">
+            <a href="/index">Menu</a>
+            <a href="/catalog">Catalog</a>
+            <a href="/">Sign up</a>
+            <a href="/contacts">Contacts</a>
+            <a href="/about">About us</a>
+          </nav>
+        </aside>
+        <div class="info">
+          <div class="left">
+            <form class="form" action="/sign_up">
+              <div class="sign-up-form">
+                <h2 class="form__title">Sign up</h2>
+                <input type="text" name="name" placeholder="Name" />
+                <input type="text" name="surname" placeholder="Surname" />
+                <input type="text" name="age" placeholder="Age" />
+                <input type="text" name="email" placeholder="Email" />
+                <input type="text" name="phone" placeholder="Phone number" />
+                <button>Send</button>
+              </div>
+            </form>
+          </div>
+          <div class="right">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+              expedita reprehenderit quo accusamus, ipsam odit minima sequi nisi
+              reiciendis, eum possimus exercitationem pariatur praesentium
+              temporibus aut nemo corrupti alias adipisci?
+            </p>
+          </div>
         </div>
-        <div class="right">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed expedita reprehenderit quo accusamus,
-            ipsam odit minima sequi nisi reiciendis, eum possimus exercitationem pariatur praesentium temporibus
-            aut nemo corrupti alias adipisci?
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
-  <footer>
-    <h3>Dmytro Hushchin</h3>
-  </footer>
-  <script src="{{ url_for('static', filename='js/ReadForm.js') }}"></script>
-</body>
+      </section>
+    </div>
+    <footer>
+      <h3>Dmytro Hushchin</h3>
+    </footer>
+    <script src="{{ url_for('static', filename='js/ReadForm.js') }}"></script>
+  </body>
 </html>

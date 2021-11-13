@@ -34,7 +34,8 @@
     "stylelint-config-standard": "^23.0.0"
   },
   "lint-staged": {
-    "*.{js,css,html}": "npm run format:check",
-    "*.css": "npm run stylelint:check"
+    "*.js": "npm run eslint:check",
+    "*.css": "npm run stylelint:check",
+    "*.{js,css,html,md}": "npm run format:check"
   }
 }

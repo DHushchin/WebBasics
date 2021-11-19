@@ -1,4 +1,4 @@
 {
-  "extends": ["plugin:sonarjs/recommended"],
+  "extends": "stylelint-config-standard",
   "ignoreFiles": ["static/css/normalize.css"]
 }

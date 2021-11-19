@@ -1,4 +1,1 @@
-{
-  "extends": ["plugin:sonarjs/recommended"],
-  "ignoreFiles": ["css/normalize.css"]
-}
+

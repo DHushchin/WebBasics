@@ -1,12 +1,7 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "ecmaVersion": 13,
-    "sourceType": "module"
-  },
-  "rules": {}
+  "extends": ["plugin:sonarjs/recommended"],
+  "plugins": ["sonarjs"],
+  "rules": {
+    "sonarjs/elseif-without-else": 1
+  }
 }

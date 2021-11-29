@@ -104,6 +104,7 @@ header > p {
   background-color: var(--light-color);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .left > form {
@@ -181,6 +182,7 @@ header > p {
 
 .right {
   background-color: var(--light-color);
+  overflow: hidden;
 }
 
 footer {
@@ -201,6 +203,18 @@ footer > h3 {
 a:hover {
   transition: 0.5s;
   color: var(--light-color);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+main > div {
+  height: 100%;
+  width: 90%;
+  overflow: scroll;
 }
 
 main > p,

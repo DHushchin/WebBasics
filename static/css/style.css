@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --font-Mont: "Montserrat", sans-serif;
+  --font-mont: "Montserrat", sans-serif;
   --color-header-footer: #d4a59a;
   --color-aside: #0367a6;
   --light-color: #e4c580;
@@ -18,6 +18,10 @@ table td {
 
 header {
   width: 100%;
+  max-height: 15vh;
+  min-height: 5vh;
+  max-width: 100%;
+  min-width: 100%;
   height: 15vh;
   background-color: var(--color-header-footer);
   display: flex;
@@ -37,6 +41,10 @@ header > p {
 
 .container {
   width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 65vh;
+  max-height: 75vh;
   height: 70vh;
   display: flex;
   flex-direction: row;
@@ -75,11 +83,16 @@ header > p {
   background-color: var(--color-aside);
 }
 
-.navigation {
+.right-place nav {
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.right-place nav > a {
+  font-size: 22px;
+  color: var(--black-color);
 }
 
 .info {
@@ -113,7 +126,7 @@ header > p {
   height: 50%;
 }
 
-.circle__block {
+.circle-block {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -121,7 +134,7 @@ header > p {
   margin: 0 auto;
 }
 
-.circle__info {
+.circle-info {
   text-align: center;
 }
 
@@ -138,7 +151,7 @@ header > p {
 
 .con-form > h2 {
   line-height: 0%;
-  font-family: var(--font-Mont);
+  font-family: var(--font-mont);
 }
 
 .con-form > button {
@@ -155,7 +168,7 @@ header > p {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  font-family: var(--font-Mont);
+  font-family: var(--font-mont);
   letter-spacing: 0.1rem;
   padding: auto;
   text-transform: uppercase;
@@ -168,61 +181,11 @@ header > p {
   background-color: var(--white-color);
   border: none;
   width: 80%;
-  font-family: var(--font-Mont);
+  font-family: var(--font-mont);
   font-size: 100%;
   padding: 4%;
   height: 5%;
   margin: 5% auto;
-}
-
-.sign-up-form {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 16px;
-  text-align: center;
-}
-
-.sign-up-form > h2 {
-  line-height: 0%;
-  font-family: var(--font-Mont);
-}
-
-.sign-up-form > button {
-  background-color: var(--color-aside);
-  background-image: linear-gradient(
-    90deg,
-    var(--color-aside) 0%,
-    var(--light-blue-color) 74%
-  );
-  border-radius: 25px;
-  border: 1px solid var(--color-aside);
-  color: var(--cream-color);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: var(--font-Mont);
-  letter-spacing: 0.1rem;
-  padding: auto;
-  text-transform: uppercase;
-  width: 60%;
-  height: 10%;
-  margin: 3% auto 0;
-}
-
-.sign-up-form > input {
-  background-color: var(--white-color);
-  border: none;
-  width: 70%;
-  font-family: var(--font-Mont);
-  font-size: 100%;
-  padding: 4%;
-  height: 2%;
-  margin: 3% auto;
-  border-radius: 10px;
 }
 
 .right {
@@ -240,12 +203,12 @@ footer {
 }
 
 footer > h3 {
-  font-family: var(--font-Mont);
+  font-family: var(--font-mont);
   font-size: 1.5em;
   margin-right: 10%;
 }
 
-a:hover {
+.right-place nav a:hover {
   transition: 0.5s;
   color: var(--light-color);
 }
@@ -259,7 +222,7 @@ main {
 main > div {
   height: 100%;
   width: 90%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 main > p,
@@ -320,7 +283,7 @@ aside > img {
     font-size: 12px;
   }
 
-  .circle__info > p {
+  .circle-info > p {
     font-size: 14px;
   }
 }

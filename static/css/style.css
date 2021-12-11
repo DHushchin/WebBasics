@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --font-mont: "Montserrat", sans-serif;
+  --font-Mont: "Montserrat", sans-serif;
   --color-header-footer: #d4a59a;
   --color-aside: #0367a6;
   --light-color: #e4c580;
@@ -126,7 +126,7 @@ header > p {
   height: 50%;
 }
 
-.circle-block {
+.circle__block {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -134,7 +134,7 @@ header > p {
   margin: 0 auto;
 }
 
-.circle-info {
+.circle__info {
   text-align: center;
 }
 
@@ -151,7 +151,7 @@ header > p {
 
 .con-form > h2 {
   line-height: 0%;
-  font-family: var(--font-mont);
+  font-family: var(--font-Mont);
 }
 
 .con-form > button {
@@ -168,7 +168,7 @@ header > p {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  font-family: var(--font-mont);
+  font-family: var(--font-Mont);
   letter-spacing: 0.1rem;
   padding: auto;
   text-transform: uppercase;
@@ -181,11 +181,61 @@ header > p {
   background-color: var(--white-color);
   border: none;
   width: 80%;
-  font-family: var(--font-mont);
+  font-family: var(--font-Mont);
   font-size: 100%;
   padding: 4%;
   height: 5%;
   margin: 5% auto;
+}
+
+.sign-up-form {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+}
+
+.sign-up-form > h2 {
+  line-height: 0%;
+  font-family: var(--font-Mont);
+}
+
+.sign-up-form > button {
+  background-color: var(--color-aside);
+  background-image: linear-gradient(
+    90deg,
+    var(--color-aside) 0%,
+    var(--light-blue-color) 74%
+  );
+  border-radius: 25px;
+  border: 1px solid var(--color-aside);
+  color: var(--cream-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--font-Mont);
+  letter-spacing: 0.1rem;
+  padding: auto;
+  text-transform: uppercase;
+  width: 60%;
+  height: 10%;
+  margin: 3% auto 0;
+}
+
+.sign-up-form > input {
+  background-color: var(--white-color);
+  border: none;
+  width: 70%;
+  font-family: var(--font-Mont);
+  font-size: 100%;
+  padding: 4%;
+  height: 2%;
+  margin: 3% auto;
+  border-radius: 10px;
 }
 
 .right {
@@ -203,12 +253,12 @@ footer {
 }
 
 footer > h3 {
-  font-family: var(--font-mont);
+  font-family: var(--font-Mont);
   font-size: 1.5em;
   margin-right: 10%;
 }
 
-.right-place nav a:hover {
+a:hover {
   transition: 0.5s;
   color: var(--light-color);
 }
@@ -283,7 +333,7 @@ aside > img {
     font-size: 12px;
   }
 
-  .circle-info > p {
+  .circle__info > p {
     font-size: 14px;
   }
 }

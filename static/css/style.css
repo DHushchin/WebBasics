@@ -37,6 +37,7 @@ header > p {
   width: 50%;
   text-align: end;
   margin: 0 5% 0 0;
+  font-weight: bold;
 }
 
 .container {
@@ -59,19 +60,23 @@ header > p {
   justify-content: space-between;
 }
 
-.left-place > aside {
-  width: 40%;
-  height: 100%;
-  background-color: var(--color-aside);
-}
-
 .container > section {
   width: 50%;
   height: 100%;
 }
 
+.left-place > aside {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
 .left-place > main {
-  width: 40%;
+  width: 30%;
   height: 100%;
   margin: 0 10% 0 0;
   background-color: var(--light-color);
@@ -211,7 +216,7 @@ header > p {
 
 .circle {
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 
 .circle__block {
@@ -240,6 +245,7 @@ header > p {
 .con-form > h2 {
   line-height: 0%;
   font-family: var(--font-Mont);
+  margin: 5%;
 }
 
 .con-form > button {
@@ -290,6 +296,7 @@ header > p {
 .sign-up-form > h2 {
   line-height: 0%;
   font-family: var(--font-Mont);
+  margin-bottom: 5%;
 }
 
 .sign-up-form > button {
@@ -330,6 +337,19 @@ header > p {
   background-color: var(--light-color);
 }
 
+.right p {
+  line-height: 0%;
+  font-family: var(--font-Mont);
+  font-size: 20px;
+  margin: 13%;
+}
+
+.right > p {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0%;
+}
+
 footer {
   width: 100%;
   height: 15vh;
@@ -368,9 +388,66 @@ main > p,
   padding: 10%;
 }
 
-aside > img {
+.slides {
+  width: 500%;
   height: 100%;
+  display: flex;
+}
+
+.slides .slide {
+  width: 20%;
+  transition: all 0.7s ease;
+}
+
+.slides .slide img {
   width: 100%;
+  height: auto;
+}
+
+.slides input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.slider-navigation {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-navigation .bar {
+  width: 60px;
+  height: 15px;
+  border: 2px solid var(--black-color);
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+
+.slider-navigation .bar:hover {
+  background-color: var(--light-color);
+}
+
+#r1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+  margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+  margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+  margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+  margin-left: -80%;
 }
 
 @media screen and (max-width: 1200px) {

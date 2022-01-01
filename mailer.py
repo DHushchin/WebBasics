@@ -4,7 +4,6 @@ from phonenumbers import parse, is_valid_number
 from validators import email
 from re import fullmatch
 from flask import escape
-from validate_email import validate_email
 
 
 class Mailer:
@@ -14,7 +13,7 @@ class Mailer:
     def validate(self) -> bool:
         try:
             return \
-                validate_email(self.data['email']) and \
+                email(self.data['email']) and \
                 4 <= len(self.data['email'][0:self.data['email'].find('@')]) <= 32  and \
                 is_valid_number(parse(self.data['phone'], 'UA')) and \
                 bool(fullmatch(r'[A-Za-z]{2,25}( [A-Za-z]{2,25})?', self.data['name'])) \

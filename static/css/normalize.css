@@ -7,7 +7,6 @@ html {
 
 body {
   margin: 0;
-  max-width: 100%;
 }
 
 main {
@@ -26,15 +25,13 @@ hr {
 }
 
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
 a {
   background-color: transparent;
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-size: 22px;
 }
 
 abbr[title] {
@@ -51,7 +48,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 

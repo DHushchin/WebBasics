@@ -3,5 +3,8 @@
   "plugins": ["sonarjs"],
   "rules": {
     "sonarjs/elseif-without-else": 1
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
   }
 }

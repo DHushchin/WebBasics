@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "eslint:fix": "eslint . --fix --ignore-path .gitignore",
-    "eslint:check": "eslint .",
+    "eslint:check": "eslint . --ignore-path .gitignore",
     "format:fix": "prettier --write . --ignore-path .gitignore",
     "format:check": "prettier --check . --ignore-path .gitignore",
     "stylelint:check": "stylelint \"**/*.css\" --ignore-path .gitignore",

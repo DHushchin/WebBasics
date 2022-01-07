@@ -16,8 +16,6 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - name: Installing dependencies
               run: npm install
-            - name: Running Eslint
-              run: npm run jslint
             - name: Running CSS lint
               run: npm run stylelint
             - name: Running Prettier

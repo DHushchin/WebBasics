@@ -20,5 +20,6 @@ jobs:
           npm ci
       - name: Eslint working flow
         run: |
+          npm run eslint:check
           npm run stylelint:check
-          npm run format:
+          npm run format:check

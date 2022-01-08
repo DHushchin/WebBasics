@@ -264,6 +264,10 @@ aside > img {
     height: 50%;
   }
 
+  .right-place > aside nav {
+    min-height: 10vh;
+  }
+
   header > p {
     font-size: 80%;
   }

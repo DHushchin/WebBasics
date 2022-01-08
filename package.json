@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/DHushchin/WebBasics#readme",
   "devDependencies": {
+    "dotenv-webpack": "^7.0.3",
     "eslint": "^8.2.0",
     "husky": "^7.0.2",
     "prettier": "^2.4.1",
@@ -36,6 +37,7 @@
     "*.{js,css,html,md}": "npm run format:check"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "eslint-plugin-sonarjs": "^0.11.0",
     "lint-staged": "^11.2.6"
   }

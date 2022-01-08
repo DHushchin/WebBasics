@@ -20,7 +20,7 @@ modalOverlayBlock.addEventListener("click", () => {
 const form = document.querySelector(".form");
 
 const callApi = ({ data, method = HttpMethods.GET }) => {
-  return fetch(API_ROOT, {
+  return fetch(process.env.API_ROOT, {
     method,
     body: data ? JSON.stringify(data) : null,
     headers: {

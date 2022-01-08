@@ -94,14 +94,14 @@ main > p,
   padding: 10%;
 }
 
-.right-place > aside {
-  height: 20%;
-  width: 100%;
-  background-color: var(--color-aside);
+.right-place {
+  height: auto;
 }
 
-.right-place nav {
-  height: 100%;
+.right-place > nav {
+  height: 15%;
+  width: 100%;
+  background-color: var(--color-aside);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -110,10 +110,11 @@ main > p,
 .right-place nav > a {
   font-size: 22px;
   color: var(--black-color);
+  margin: 0 5px;
 }
 
 .info {
-  height: 80%;
+  height: 85%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -122,13 +123,26 @@ main > p,
 
 .info > div {
   width: 40%;
-  height: 100%;
+  height: auto;
 }
 
 .info > aside {
   background-color: var(--light-color);
-  overflow: hidden;
+  min-height: 25vh;
   width: 40%;
+  height: auto;
+}
+
+.info > aside p {
+  font-family: var(--font-mont);
+  font-size: 16px;
+  margin: 5%;
+}
+
+.info > aside > p {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0%;
 }
 
 .left {
@@ -147,6 +161,7 @@ main > p,
 .circle {
   width: 100%;
   height: 50%;
+  margin-bottom: 5%;
 }
 
 .circle-block {
@@ -264,7 +279,7 @@ aside > img {
     height: 50%;
   }
 
-  .right-place > aside nav {
+  .right-place > nav {
     min-height: 10vh;
   }
 

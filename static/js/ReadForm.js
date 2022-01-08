@@ -3,10 +3,24 @@ const HttpMethods = {
   POST: "POST",
 };
 
+function showModal(err) {
+  const info = document.querySelector(".modal > p");
+  modal.style.display = "block";
+  info.innerHTML = `${err}`;
+}
+
+const modalOverlayBlock = document.querySelector(".overlay");
+const modal = document.querySelector(".wrapper");
+
+modalOverlayBlock.addEventListener("click", () => {
+  modal.style.display = "none";
+  clearFields(form);
+});
+
 const form = document.querySelector(".form");
 
 const callApi = ({ data, method = HttpMethods.GET }) => {
-  return fetch(`https://dhushchin-first-website.herokuapp.com/mail`, {
+  return fetch(API_ROOT, {
     method,
     body: data ? JSON.stringify(data) : null,
     headers: {
@@ -15,7 +29,7 @@ const callApi = ({ data, method = HttpMethods.GET }) => {
     },
   })
     .then((response) => response.json())
-    .catch((err) => console.err(`Error fetch request -> ${err}`));
+    .catch((err) => showModal(err));
 };
 
 const getFormData = (form) => {
@@ -44,13 +58,13 @@ const sendHandler = async () => {
 
     if (response.error) {
       throw response;
-    } else {
-      clearFields(form);
-      alert(response);
-      return;
     }
+
+    clearFields(form);
+    showModal(response);
+    return;
   } catch (err) {
-    throw new Error(err);
+    showModal(err);
   }
 };
 

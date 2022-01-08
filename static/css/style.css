@@ -303,6 +303,40 @@ aside > img {
   width: 100%;
 }
 
+.modal {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  height: 150px;
+  width: 300px;
+  background-color: var(--cream-color);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal > p {
+  padding: 10%;
+}
+
+.overlay {
+  z-index: 90;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.wrapper {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .con-form > h2 {
     font-size: 16px;

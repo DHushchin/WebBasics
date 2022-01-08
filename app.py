@@ -1,6 +1,8 @@
-from flask import Flask, jsonify, request, render_template, url_for
+from flask import Flask, jsonify, render_template, request, url_for
 from ratelimit import limits
 from mailer import Mailer
+from os import environ
+
 
 app = Flask(__name__)
 
@@ -27,7 +29,7 @@ def sign_up():  # put application's code here
 
 @limits(calls=15, period=900)
 @app.route('/mail', methods=['GET', 'POST'])
-def mail():    # GET request
+def mail():    
     if request.method == 'GET':
         message = {'greeting': 'Hello from Flask!'}
         return jsonify(message)

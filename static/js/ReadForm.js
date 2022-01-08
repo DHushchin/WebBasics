@@ -19,17 +19,20 @@ modalOverlayBlock.addEventListener("click", () => {
 
 const form = document.querySelector(".form");
 
-const callApi = ({ data, method = HttpMethods.GET }) => {
-  return fetch(process.env.API_ROOT, {
-    method,
-    body: data ? JSON.stringify(data) : null,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .catch((err) => showModal(err));
+const callApi = async ({ data, method = HttpMethods.GET }) => {
+  try {
+    const response = await fetch("/mail", {
+      method,
+      body: data ? JSON.stringify(data) : null,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    return await response.json();
+  } catch (err) {
+    return showModal(err);
+  }
 };
 
 const getFormData = (form) => {

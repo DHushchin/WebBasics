@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const text1 = document.querySelector("header>p");
-  const text2 = document.querySelector(".right>p");
+  const text2 = document.querySelector(".info>aside>p");
 
   const change = new ChangePlaceText(text1, text2);
 
@@ -164,8 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const block = document.querySelector(".right");
-  const colors = document.querySelectorAll(".right p");
+  const block = document.querySelector(".info>aside");
+  const colors = document.querySelectorAll(".info>aside p");
 
   const changeCol = new ChangeColor(block);
 

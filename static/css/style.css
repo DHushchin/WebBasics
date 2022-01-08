@@ -215,7 +215,7 @@ main > p,
   align-items: center;
 }
 
-.right-place nav > a {
+.right-place > nav > a {
   font-size: 22px;
   color: var(--black-color);
   margin: 0 5px;

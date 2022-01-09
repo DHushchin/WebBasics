@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, render_template, request, url_for
 from ratelimit import limits
 from mailer import Mailer
-from os import environ
 
 
 app = Flask(__name__)

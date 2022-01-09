@@ -36,16 +36,17 @@ const callApi = async ({ data, method = HttpMethods.GET }) => {
 };
 
 const getFormData = (form) => {
-  const formData = {};
-  new FormData(form).forEach((value, key) => {
-    formData[key] = value;
-  });
-  return formData;
+  const temp = Array.from(form.elements).map((elem) => elem.value);
+  temp.splice(-1);
+  return Object.assign(
+    ...["name", "surname", "age", "email", "phone"].map((n, i) => ({
+      [n]: temp[i],
+    }))
+  );
 };
 
 const clearFields = (form) => {
-  const fields = form.querySelectorAll("input");
-  for (const field of fields) {
+  for (const field of form.elements) {
     field.value = "";
   }
 };

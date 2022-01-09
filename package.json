@@ -4,6 +4,7 @@
   "description": "Repository for web development projects in 3 term",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "eslint:fix": "eslint . --fix --ignore-path .gitignore",
     "eslint:check": "eslint . --ignore-path .gitignore",
     "format:fix": "prettier --write . --ignore-path .gitignore",

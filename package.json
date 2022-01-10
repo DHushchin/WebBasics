@@ -1,0 +1,36 @@
+{
+  "name": "webbasics",
+  "version": "1.0.0",
+  "description": "Repository for web development projects in 3 term",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "eslint:fix": "eslint . --fix --ignore-path .gitignore",
+    "eslint:check": "eslint . --ignore-path .gitignore",
+    "format:fix": "prettier --write . --ignore-path .gitignore",
+    "format:check": "prettier --check . --ignore-path .gitignore",
+    "stylelint:check": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "stylelint:fix": "stylelint \"**/*.css\" --fix --ignore-path .gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DHushchin/WebBasics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DHushchin/WebBasics/issues"
+  },
+  "homepage": "https://github.com/DHushchin/WebBasics#readme",
+  "dependencies": {
+    "eslint-plugin-sonarjs": "^0.11.0",
+    "lint-staged": "^11.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.1",
+    "stylelint-config-standard": "^23.0.0"
+  }
+}

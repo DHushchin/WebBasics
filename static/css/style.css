@@ -303,7 +303,7 @@ aside > img {
   width: 100%;
 }
 
-.modal {
+#modal {
   position: absolute;
   left: 40%;
   top: 40%;
@@ -311,30 +311,100 @@ aside > img {
   width: 300px;
   background-color: var(--cream-color);
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   z-index: 100;
 }
 
-.modal > p {
+#modal > p {
   padding: 10%;
 }
 
-.overlay {
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+#overlay {
   z-index: 90;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: var(--black-color);
   opacity: 0.6;
 }
 
-.wrapper {
-  display: none;
+#loader {
+  z-index: 101;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    var(--color-aside) 10%,
+    var(--color-aside) 42%
+  );
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#loader:before {
+  width: 50%;
+  height: 50%;
+  background: var(--white-color);
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+
+#loader:after {
+  background: var(--white-color);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 1200px) {

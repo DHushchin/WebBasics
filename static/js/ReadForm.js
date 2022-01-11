@@ -3,36 +3,36 @@ const HttpMethods = {
   POST: "POST",
 };
 
-function showModal(err) {
-  const info = document.querySelector(".modal > p");
-  modal.style.display = "block";
-  info.innerHTML = `${err}`;
+function showModal(msg) {
+  loader.className = "none";
+  modal.className = "block";
+  info.innerText = `${msg}`;
 }
 
-const modalOverlayBlock = document.querySelector(".overlay");
-const modal = document.querySelector(".wrapper");
+const overlay = document.getElementById("overlay");
+const modal = document.getElementById("modal");
+const loader = document.getElementById("loader");
+const info = document.querySelector("#modal > p");
 
-modalOverlayBlock.addEventListener("click", () => {
-  modal.style.display = "none";
+overlay.addEventListener("click", () => {
+  overlay.className = "none";
+  modal.className = "none";
+  loader.className = "none";
   clearFields(form);
 });
 
 const form = document.querySelector(".form");
 
 const callApi = async ({ data, method = HttpMethods.GET }) => {
-  try {
-    const response = await fetch("/mail", {
-      method,
-      body: data ? JSON.stringify(data) : null,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-    return await response.json();
-  } catch (err) {
-    return showModal(err);
-  }
+  const response = await fetch("/mail", {
+    method,
+    body: data ? JSON.stringify(data) : null,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
+  return await response.json();
 };
 
 const getFormData = (form) => {
@@ -68,11 +68,14 @@ const sendHandler = async () => {
     showModal(response);
     return;
   } catch (err) {
+    clearFields(form);
     showModal(err);
   }
 };
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  overlay.className = "block";
+  loader.className = "block";
   sendHandler();
 });

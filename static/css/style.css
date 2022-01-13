@@ -303,8 +303,8 @@ aside > img {
   width: 100%;
 }
 
-#modal {
-  position: absolute;
+.modal {
+  position: fixed;
   left: 40%;
   top: 40%;
   height: 150px;
@@ -314,7 +314,7 @@ aside > img {
   z-index: 100;
 }
 
-#modal > p {
+.modal > p {
   padding: 10%;
 }
 
@@ -326,7 +326,7 @@ aside > img {
   display: block;
 }
 
-#overlay {
+.overlay {
   z-index: 90;
   position: fixed;
   top: 0;
@@ -337,7 +337,7 @@ aside > img {
   opacity: 0.6;
 }
 
-#loader {
+.loader {
   z-index: 101;
   position: fixed;
   top: 40%;
@@ -360,7 +360,7 @@ aside > img {
   transform: translateZ(0);
 }
 
-#loader:before {
+.loader:before {
   width: 50%;
   height: 50%;
   background: var(--white-color);
@@ -371,7 +371,7 @@ aside > img {
   content: "";
 }
 
-#loader:after {
+.loader:after {
   background: var(--white-color);
   width: 75%;
   height: 75%;

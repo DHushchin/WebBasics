@@ -4,24 +4,28 @@ const HttpMethods = {
 };
 
 function showModal(msg) {
-  loader.className = "none";
-  modal.className = "block";
-  info.innerText = `${msg}`;
+  modal.classList.remove("none");
+  modal.classList.add("block");
+  loader.classList.remove("block");
+  loader.classList.add("none");
+  document.querySelector(".modal > p").innerText = msg;
 }
 
-const overlay = document.getElementById("overlay");
-const modal = document.getElementById("modal");
-const loader = document.getElementById("loader");
-const info = document.querySelector("#modal > p");
-
-overlay.addEventListener("click", () => {
-  overlay.className = "none";
-  modal.className = "none";
-  loader.className = "none";
-  clearFields(form);
-});
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
+const loader = document.querySelector(".loader");
 
 const form = document.querySelector(".form");
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("block");
+  overlay.classList.add("none");
+  modal.classList.remove("block");
+  modal.classList.add("none");
+  loader.classList.remove("block");
+  loader.classList.add("none");
+  form.reset();
+});
 
 const callApi = async ({ data, method = HttpMethods.GET }) => {
   const response = await fetch("/mail", {
@@ -45,12 +49,6 @@ const getFormData = (form) => {
   );
 };
 
-const clearFields = (form) => {
-  for (const field of form.elements) {
-    field.value = "";
-  }
-};
-
 const sendHandler = async () => {
   try {
     const formData = getFormData(form);
@@ -64,18 +62,20 @@ const sendHandler = async () => {
       throw response;
     }
 
-    clearFields(form);
     showModal(response);
     return;
   } catch (err) {
-    clearFields(form);
     showModal(err);
+  } finally {
+    form.reset();
   }
 };
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  overlay.className = "block";
-  loader.className = "block";
+  overlay.classList.remove("none");
+  loader.classList.remove("none");
+  overlay.classList.add("block");
+  loader.classList.add("block");
   sendHandler();
 });

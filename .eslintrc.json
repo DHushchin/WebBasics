@@ -1,6 +1,4 @@
 {
-  "extends": ["plugin:sonarjs/recommended"],
-  "plugins": ["sonarjs"],
   "rules": {
     "sonarjs/elseif-without-else": 1
   },
@@ -8,6 +6,9 @@
   "parserOptions": {
     "ecmaVersion": 2017
   },
-  "rules": {},
-  "plugins": ["sonarjs"]
+  "plugins": ["sonarjs"],
+  "env": {
+    "browser": true,
+    "node": true
+  }
 }

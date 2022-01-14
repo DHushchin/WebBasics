@@ -1,3 +1,5 @@
+"use strict";
+
 const HttpMethods = {
   GET: "GET",
   POST: "POST",

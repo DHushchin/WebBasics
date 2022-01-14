@@ -4,10 +4,8 @@ const HttpMethods = {
 };
 
 function showModal(msg) {
-  modal.classList.remove("none");
   modal.classList.add("block");
   loader.classList.remove("block");
-  loader.classList.add("none");
   document.querySelector(".modal > p").innerText = msg;
 }
 
@@ -18,12 +16,9 @@ const loader = document.querySelector(".loader");
 const form = document.querySelector(".form");
 
 overlay.addEventListener("click", () => {
-  overlay.classList.remove("block");
-  overlay.classList.add("none");
   modal.classList.remove("block");
-  modal.classList.add("none");
   loader.classList.remove("block");
-  loader.classList.add("none");
+  overlay.classList.remove("block");
   form.reset();
 });
 
@@ -73,8 +68,6 @@ const sendHandler = async () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  overlay.classList.remove("none");
-  loader.classList.remove("none");
   overlay.classList.add("block");
   loader.classList.add("block");
   sendHandler();

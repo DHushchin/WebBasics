@@ -312,6 +312,7 @@ aside > img {
   background-color: var(--cream-color);
   border-radius: 20px;
   z-index: 100;
+  display: none;
 }
 
 .modal > p {
@@ -320,10 +321,6 @@ aside > img {
 
 .none {
   display: none;
-}
-
-.block {
-  display: block;
 }
 
 .overlay {
@@ -335,6 +332,7 @@ aside > img {
   height: 100%;
   background-color: var(--black-color);
   opacity: 0.6;
+  display: none;
 }
 
 .loader {
@@ -358,6 +356,7 @@ aside > img {
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
+  display: none;
 }
 
 .loader:before {
@@ -405,6 +404,10 @@ aside > img {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.block {
+  display: block;
 }
 
 @media screen and (max-width: 1200px) {

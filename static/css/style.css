@@ -153,10 +153,10 @@ main > p,
 }
 
 .burger-menu > a {
+  color: var(--white-color);
   display: block;
   width: 100%;
   padding: 10px;
-  color: var(--white-color);
   text-decoration: none;
   border-top: 1px solid var(--white-color);
   background-color: var(--black-color);
@@ -215,7 +215,7 @@ main > p,
   align-items: center;
 }
 
-.right-place nav > a {
+.right-place > nav > a {
   font-size: 22px;
   color: var(--black-color);
   margin: 0 5px;
@@ -255,16 +255,10 @@ main > p,
   height: auto;
 }
 
-.info > aside p {
+.info > aside > p {
   font-family: var(--font-mont);
   font-size: 16px;
   margin: 5%;
-}
-
-.info > aside > p {
-  font-weight: bold;
-  font-size: 14px;
-  margin: 0%;
 }
 
 .circle {

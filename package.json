@@ -1,16 +1,17 @@
 {
   "name": "webbasics",
   "version": "1.0.0",
-  "description": "Repository for web development projects in 3 term",
+  "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "eslint:fix": "eslint . --fix --ignore-path .gitignore",
     "eslint:check": "eslint . --ignore-path .gitignore",
     "format:fix": "prettier --write . --ignore-path .gitignore",
     "format:check": "prettier --check . --ignore-path .gitignore",
-    "stylelint:check": "stylelint \"**/*.css\" --ignore-path .gitignore",
-    "stylelint:fix": "stylelint \"**/*.css\" --fix --ignore-path .gitignore"
+    "stylelint:fix": "stylelint **/*.css --fix --ignore-path .gitignore",
+    "stylelint:check": "stylelint **/*.css --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
@@ -22,15 +23,20 @@
     "url": "https://github.com/DHushchin/WebBasics/issues"
   },
   "homepage": "https://github.com/DHushchin/WebBasics#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "lint-staged": {
+    "*.js": "npm run eslint:check",
+    "*.css": "npm run stylelint:check",
+    "*.{js,css,html,md}": "npm run format:check"
+  },
   "dependencies": {
     "eslint-plugin-sonarjs": "^0.11.0",
     "lint-staged": "^11.2.6"
-  },
-  "devDependencies": {
-    "eslint": "^8.2.0",
-    "husky": "^7.0.4",
-    "prettier": "^2.4.1",
-    "stylelint": "^14.0.1",
-    "stylelint-config-standard": "^23.0.0"
   }
 }

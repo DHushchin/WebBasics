@@ -67,7 +67,10 @@ header > p {
 .left-place > aside {
   width: 40%;
   height: 100%;
-  background-color: var(--color-aside);
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -84,7 +87,7 @@ main {
 }
 
 main > div {
-  height: auto;
+  height: 100%;
   width: 90%;
 }
 
@@ -126,13 +129,6 @@ main > p,
   height: auto;
 }
 
-.info > aside {
-  background-color: var(--light-color);
-  min-height: 25vh;
-  width: 40%;
-  height: auto;
-}
-
 .info > aside p {
   font-family: var(--font-mont);
   font-size: 16px;
@@ -149,7 +145,6 @@ main > p,
   background-color: var(--light-color);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .left > form {
@@ -226,6 +221,63 @@ main > p,
   margin: 5% auto;
 }
 
+.sign-up-form {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+}
+
+.sign-up-form > h2 {
+  line-height: 0%;
+  font-family: var(--font-mont);
+}
+
+.sign-up-form > button {
+  background-color: var(--color-aside);
+  background-image: linear-gradient(
+    90deg,
+    var(--color-aside) 0%,
+    var(--light-blue-color) 74%
+  );
+  border-radius: 25px;
+  border: 1px solid var(--color-aside);
+  color: var(--cream-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--font-mont);
+  letter-spacing: 0.1rem;
+  padding: auto;
+  text-transform: uppercase;
+  width: 60%;
+  height: 10%;
+  margin: 3% auto 0;
+}
+
+.sign-up-form > input {
+  background-color: var(--white-color);
+  border: none;
+  width: 70%;
+  font-family: var(--font-mont);
+  font-size: 100%;
+  padding: 4%;
+  height: 2%;
+  margin: 3% auto;
+  border-radius: 10px;
+}
+
+.info > aside {
+  background-color: var(--light-color);
+  min-height: 25vh;
+  width: 40%;
+  height: auto;
+}
+
 footer {
   width: 100%;
   height: 15vh;
@@ -241,7 +293,7 @@ footer > h3 {
   margin-right: 10%;
 }
 
-.right-place nav a:hover {
+a:hover {
   transition: 0.5s;
   color: var(--light-color);
 }
@@ -249,6 +301,113 @@ footer > h3 {
 aside > img {
   height: 100%;
   width: 100%;
+}
+
+.modal {
+  position: fixed;
+  left: 40%;
+  top: 40%;
+  height: 150px;
+  width: 300px;
+  background-color: var(--cream-color);
+  border-radius: 20px;
+  z-index: 100;
+  display: none;
+}
+
+.modal > p {
+  padding: 10%;
+}
+
+.none {
+  display: none;
+}
+
+.overlay {
+  z-index: 90;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-color);
+  opacity: 0.6;
+  display: none;
+}
+
+.loader {
+  z-index: 101;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    var(--color-aside) 10%,
+    var(--color-aside) 42%
+  );
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  display: none;
+}
+
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: var(--white-color);
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+
+.loader:after {
+  background: var(--white-color);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.block {
+  display: block;
 }
 
 @media screen and (max-width: 1200px) {
@@ -270,6 +429,10 @@ aside > img {
     height: auto;
   }
 
+  .right-place > nav {
+    min-height: 10vh;
+  }
+
   .info > aside {
     width: 50%;
   }
@@ -277,10 +440,6 @@ aside > img {
   .container > section {
     width: 100%;
     height: 50%;
-  }
-
-  .right-place > nav {
-    min-height: 10vh;
   }
 
   header > p {
@@ -301,6 +460,7 @@ aside > img {
   .left-place > main,
   .info > div {
     width: 50%;
+    height: auto;
   }
 
   .con-form > h2 {

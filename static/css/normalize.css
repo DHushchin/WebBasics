@@ -2,7 +2,7 @@
 
 html {
   line-height: 1.15;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -101,7 +101,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  appearance: button;
+  -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
@@ -152,16 +152,16 @@ textarea {
 }
 
 [type="search"] {
-  appearance: textfield;
+  -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
 [type="search"]::-webkit-search-decoration {
-  appearance: none;
+  -webkit-appearance: none;
 }
 
 ::-webkit-file-upload-button {
-  appearance: button;
+  -webkit-appearance: button;
   font: inherit;
 }
 

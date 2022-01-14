@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
     <title>MyFirstPage</title>
+    <base href="/" />
   </head>
 
   <body>
@@ -17,12 +24,16 @@
     <div class="container">
       <section class="left-place">
         <aside>
-          <img src="/img/phone.jpg" />
+          <img
+            src="{{ url_for('static', filename='img/phone.jpg') }}"
+            alt="Phone image"
+          />
         </aside>
         <main>
           <ul>
             <li>
               <p>First item</p>
+              <p></p>
             </li>
             <li><p>Second item</p></li>
             <li><p>Third item</p></li>
@@ -31,19 +42,19 @@
       </section>
       <section class="right-place">
         <nav>
-          <a href="/index.html" alt="Menu">Menu</a>
-          <a href="/catalog.html" alt="Catalog">Catalog</a>
-          <a href="#" alt="Blog">Blog</a>
-          <a href="/contacts.html" alt="Contacts">Contacts</a>
-          <a href="/about.html" alt="About us">About us</a>
+          <a href="/index">Menu</a>
+          <a href="/">Catalog</a>
+          <a href="/sign_up">Sign up</a>
+          <a href="/contacts">Contacts</a>
+          <a href="/about">About us</a>
         </nav>
         <div class="info">
           <div class="left">
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-              expedita reprehenderit quo accusamus, ipsam odit minima sequi nisi
-              reiciendis, eum possimus exercitationem pariatur praesentium
-              temporibus aut nemo corrupti alias adipisci?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              quod ad laboriosam, neque amet blanditiis eaque similique nemo
+              voluptatem, perspiciatis dignissimos sit voluptatibus assumenda
+              sapiente tempore exercitationem, excepturi obcaecati reiciendis?
             </p>
           </div>
           <aside>
@@ -60,5 +71,6 @@
     <footer>
       <h3>Dmytro Hushchin</h3>
     </footer>
+    <script src="./js/messageEmail.js"></script>
   </body>
 </html>

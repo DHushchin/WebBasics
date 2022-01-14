@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
     <title>MyFirstPage</title>
+    <base href="/" />
   </head>
 
   <body>
@@ -17,7 +24,10 @@
     <div class="container">
       <section class="left-place">
         <aside>
-          <img src="/img/phone.jpg" />
+          <img
+            src="{{ url_for('static', filename='img/phone.jpg') }}"
+            alt="Phone image"
+          />
         </aside>
         <main>
           <ul>
@@ -32,20 +42,25 @@
       </section>
       <section class="right-place">
         <nav>
-          <a href="/index.html" alt="Menu">Menu</a>
-          <a href="/catalog.html" alt="Catalog">Catalog</a>
-          <a href="/blog.html" alt="Blog">Blog</a>
-          <a href="#" alt="Contacts">Contacts</a>
-          <a href="/about.html" alt="About us">About us</a>
+          <a href="/index">Menu</a>
+          <a href="/catalog">Catalog</a>
+          <a href="/">Sign up</a>
+          <a href="/contacts">Contacts</a>
+          <a href="/about">About us</a>
         </nav>
         <div class="info">
           <div class="left">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-              expedita reprehenderit quo accusamus, ipsam odit minima sequi nisi
-              reiciendis, eum possimus exercitationem pariatur praesentium
-              temporibus aut nemo corrupti alias adipisci?
-            </p>
+            <form class="form" action="/sign_up">
+              <div class="sign-up-form">
+                <h2 class="form__title">Sign up</h2>
+                <input type="text" name="name" placeholder="Name" />
+                <input type="text" name="surname" placeholder="Surname" />
+                <input type="text" name="age" placeholder="Age" />
+                <input type="text" name="email" placeholder="Email" />
+                <input type="text" name="phone" placeholder="+380xxxxxxxxx" />
+                <button>Send</button>
+              </div>
+            </form>
           </div>
           <aside>
             <p>
@@ -61,5 +76,9 @@
     <footer>
       <h3>Dmytro Hushchin</h3>
     </footer>
+    <div class="loader"></div>
+    <div class="modal"><p></p></div>
+    <div class="overlay"></div>
+    <script src="{{ url_for('static', filename='js/ReadForm.js') }}"></script>
   </body>
 </html>

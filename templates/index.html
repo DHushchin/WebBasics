@@ -19,15 +19,56 @@
   <body>
     <header>
       <h1>Welcome here!</h1>
-      <p><b>Choose your color</b></p>
+      <p>Choose color</p>
     </header>
     <div class="container">
       <section class="left-place">
         <aside>
-          <img
-            src="{{ url_for('static', filename='img/phone.jpg') }}"
-            alt="Phone image"
-          />
+          <div class="slider-navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+            <label for="r5" class="bar"></label>
+          </div>
+          <div class="slides">
+            <input type="radio" name="r" id="r1" />
+            <input type="radio" name="r" id="r2" />
+            <input type="radio" name="r" id="r3" />
+            <input type="radio" name="r" id="r4" />
+            <input type="radio" name="r" id="r5" />
+
+            <div class="slide s1">
+              <img
+                src="{{ url_for('static', filename='img/1.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/2.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/3.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/4.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/5.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+          </div>
         </aside>
         <main>
           <div>
@@ -51,7 +92,7 @@
         </main>
       </section>
       <section class="right-place">
-        <nav>
+        <nav class="navigation">
           <a href="/">Menu</a>
           <a href="/catalog">Catalog</a>
           <a href="/sign_up">Sign up</a>
@@ -78,16 +119,10 @@
           <aside>
             <p>Some funny text about page</p>
             <ul>
-              <li>
-                <p>Red</p>
-                <p></p>
-              </li>
+              <li><p>Red</p></li>
               <li><p>Purple</p></li>
               <li><p>Blue</p></li>
-              <li>
-                <p>Purple</p>
-                <p></p>
-              </li>
+              <li><p>Purple</p></li>
               <li><p>Orange</p></li>
               <li><p>Grey</p></li>
               <li><p>Light</p></li>

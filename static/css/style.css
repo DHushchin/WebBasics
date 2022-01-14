@@ -37,6 +37,7 @@ header > p {
   width: 50%;
   text-align: end;
   margin: 0 5% 0 0;
+  font-weight: bold;
 }
 
 .container {
@@ -65,12 +66,13 @@ header > p {
 }
 
 .left-place > aside {
-  width: 40%;
+  width: 60%;
   height: 100%;
   overflow: hidden;
   position: relative;
   justify-content: center;
   align-items: center;
+  margin: 0 5%;
 }
 
 main {
@@ -95,6 +97,109 @@ main > p,
 .left > p,
 .info > aside > p {
   padding: 10%;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: var(--black-color);
+  position: relative;
+  color: var(--white-color);
+  text-align: center;
+  height: 40px;
+}
+
+.wrapper > label {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  line-height: 40px;
+}
+
+.burger-line {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 35px;
+  height: 2px;
+  background-color: var(--white-color);
+  transition: 0.5s all;
+}
+
+.second,
+.third {
+  top: 18px;
+}
+
+.fourth {
+  top: 28px;
+}
+
+.burger-menu {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  max-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  transition: 0.5s all;
+}
+
+.burger-menu > a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: var(--white-color);
+  text-decoration: none;
+  border-top: 1px solid var(--white-color);
+  background-color: var(--black-color);
+}
+
+#check-menu {
+  opacity: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#check-menu:checked {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#check-menu:checked ~ .burger-menu {
+  max-height: 500px;
+  font-size: 16px;
+  z-index: 10;
+}
+
+#check-menu:checked ~ .first {
+  display: none;
+}
+
+#check-menu:checked ~ .second {
+  transform: rotate(45deg);
+}
+
+#check-menu:checked ~ .third {
+  transform: rotate(-45deg);
+}
+
+#check-menu:checked ~ .fourth {
+  display: none;
 }
 
 .right-place {
@@ -129,6 +234,27 @@ main > p,
   height: auto;
 }
 
+.left {
+  background-color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  height: auto;
+}
+
+.left > form {
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+
+.info > aside {
+  background-color: var(--light-color);
+  min-height: 25vh;
+  width: 40%;
+  height: auto;
+}
+
 .info > aside p {
   font-family: var(--font-mont);
   font-size: 16px;
@@ -141,21 +267,10 @@ main > p,
   margin: 0%;
 }
 
-.left {
-  background-color: var(--light-color);
-  display: flex;
-  flex-direction: column;
-}
-
-.left > form {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
 .circle {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  margin-top: 10%;
   margin-bottom: 5%;
 }
 
@@ -180,11 +295,13 @@ main > p,
   justify-content: center;
   font-size: 16px;
   text-align: center;
+  margin-top: 5%;
 }
 
 .con-form > h2 {
   line-height: 0%;
   font-family: var(--font-mont);
+  margin: 5%;
 }
 
 .con-form > button {
@@ -235,6 +352,7 @@ main > p,
 .sign-up-form > h2 {
   line-height: 0%;
   font-family: var(--font-mont);
+  margin-bottom: 5%;
 }
 
 .sign-up-form > button {
@@ -293,10 +411,71 @@ footer > h3 {
   margin-right: 10%;
 }
 
-a:hover {
+.right-place nav a:hover {
   transition: 0.5s;
   color: var(--light-color);
 }
+
+.slides {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slides .slide {
+  width: 20%;
+  transition: all 0.7s ease;
+}
+
+.slides .slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slides input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.slider-navigation {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-navigation .bar {
+  width: 60px;
+  height: 15px;
+  border: 2px solid var(--black-color);
+  margin: 3px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+}
+
+.slider-navigation .bar:hover {
+  background-color: var(--light-color);
+}
+
+#r1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+  margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+  margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+  margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+  margin-left: -80%;
 
 aside > img {
   height: 100%;
@@ -317,10 +496,6 @@ aside > img {
 
 .modal > p {
   padding: 10%;
-}
-
-.none {
-  display: none;
 }
 
 .overlay {

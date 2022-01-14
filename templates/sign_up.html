@@ -24,24 +24,75 @@
     <div class="container">
       <section class="left-place">
         <aside>
-          <img
-            src="{{ url_for('static', filename='img/phone.jpg') }}"
-            alt="Phone image"
-          />
+          <div class="slider-navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+            <label for="r5" class="bar"></label>
+          </div>
+          <div class="slides">
+            <input type="radio" name="r" id="r1" />
+            <input type="radio" name="r" id="r2" />
+            <input type="radio" name="r" id="r3" />
+            <input type="radio" name="r" id="r4" />
+            <input type="radio" name="r" id="r5" />
+
+            <div class="slide s1">
+              <img
+                src="{{ url_for('static', filename='img/1.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/2.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/3.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/4.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="{{ url_for('static', filename='img/5.jpg') }}"
+                alt="Phone image"
+              />
+            </div>
+          </div>
         </aside>
         <main>
-          <ul>
-            <li>
-              <p>First item</p>
-              <p></p>
-            </li>
-            <li><p>Second item</p></li>
-            <li><p>Third item</p></li>
-          </ul>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, perspiciatis earum odit exercitationem mollitia
+              nesciunt ullam quod necessitatibus reprehenderit praesentium
+              laboriosam, delectus officiis tempora, impedit ipsa explicabo.
+              Quos, incidunt voluptate? Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Voluptates, perspiciatis earum odit
+              exercitationem mollitia nesciunt ullam quod necessitatibus
+              reprehenderit praesentium laboriosam, delectus officiis tempora,
+              impedit ipsa explicabo. Quos, incidunt voluptate? Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Voluptates,
+              perspiciatis earum odit exercitationem mollitia nesciunt ullam
+              quod necessitatibus reprehenderit praesentium laboriosam, delectus
+              officiis tempora, impedit ipsa explicabo. Quos, incidunt
+              voluptate?
+            </p>
+          </div>
         </main>
       </section>
       <section class="right-place">
-        <nav>
+        <nav class="navigation">
           <a href="/index">Menu</a>
           <a href="/catalog">Catalog</a>
           <a href="/">Sign up</a>
@@ -63,12 +114,21 @@
             </form>
           </div>
           <aside>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-              expedita reprehenderit quo accusamus, ipsam odit minima sequi nisi
-              reiciendis, eum possimus exercitationem pariatur praesentium
-              temporibus aut nemo corrupti alias adipisci?
-            </p>
+            <div class="wrapper">
+              <input type="checkbox" id="check-menu" />
+              <label for="check-menu"></label>
+              <div class="burger-line first"></div>
+              <div class="burger-line second"></div>
+              <div class="burger-line third"></div>
+              <div class="burger-line fourth"></div>
+              <nav class="burger-menu">
+                <a href="/">Menu</a>
+                <a href="/catalog">Catalog</a>
+                <a href="/sign_up">Sign up</a>
+                <a href="/contacts">Contacts</a>
+                <a href="/about">About us</a>
+              </nav>
+            </div>
           </aside>
         </div>
       </section>

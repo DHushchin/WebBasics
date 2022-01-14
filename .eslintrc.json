@@ -1,7 +1,8 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
+  "extends": ["plugin:sonarjs/recommended"],
+  "plugins": ["sonarjs"],
+  "rules": {
+    "sonarjs/elseif-without-else": 1
   },
   "extends": ["eslint:recommended", "plugin:sonarjs/recommended"],
   "parserOptions": {

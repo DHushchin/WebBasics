@@ -1,7 +1,7 @@
 import smtplib, os
 from email.mime.text import MIMEText
-from validators import email
 from phonenumbers import parse, is_valid_number
+from validators import email
 from re import fullmatch
 from flask import escape
 
@@ -11,12 +11,17 @@ class Mailer:
         self.data = {escape(key): escape(value) for key, value in data.items()}  # sanitize data
 
     def validate(self) -> bool:
-        return email(self.data['email']) and \
-               is_valid_number(parse(self.data['phone'], 'UA')) and \
-               bool(fullmatch('[A-Za-z]{2,25}( [A-Za-z]{2,25})?', self.data['name'])) \
-               and bool(fullmatch('[A-Za-z]{2,25}( [A-Za-z]{2,25})?', self.data['surname'])) \
-               and self.data['age'].isdigit() \
-               and 0 < int(self.data['age']) < 130
+        try:
+            return \
+                email(self.data['email']) and \
+                4 <= len(self.data['email'][0:self.data['email'].find('@')]) <= 32  and \
+                is_valid_number(parse(self.data['phone'], 'UA')) and \
+                bool(fullmatch(r'[A-Za-z]{2,25}( [A-Za-z]{2,25})?', self.data['name'])) \
+                and bool(fullmatch(r'[A-Za-z]{2,25}( [A-Za-z]{2,25})?', self.data['surname'])) \
+                and self.data['age'].isdigit() \
+                and 0 < int(self.data['age']) < 130
+        except:
+            return False
 
     def read_html(self):
         try:

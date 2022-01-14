@@ -1,5 +1,3 @@
-"use strict";
-
 class EventEmitter {
   constructor() {
     this.events = {}; // hash of array of function
@@ -17,6 +15,22 @@ class EventEmitter {
     }
   }
 }
+
+function showModal(msg) {
+  modal.classList.remove("none");
+  modal.classList.add("block");
+  document.querySelector("#modal > p").innerText = msg;
+}
+
+const overlay = document.getElementById("overlay");
+const modal = document.getElementById("modal");
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("block");
+  overlay.classList.add("none");
+  modal.classList.remove("block");
+  modal.classList.add("none");
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1 завдання - Поміняйте місцями тексти, позначені «1» та «6»
@@ -187,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     } catch (err) {
-      throw new Error(err);
+      showModal(err);
     }
   });
 });

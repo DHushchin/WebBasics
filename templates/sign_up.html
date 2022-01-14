@@ -108,7 +108,7 @@
                 <input type="text" name="surname" placeholder="Surname" />
                 <input type="text" name="age" placeholder="Age" />
                 <input type="text" name="email" placeholder="Email" />
-                <input type="text" name="phone" placeholder="Phone number" />
+                <input type="text" name="phone" placeholder="+380xxxxxxxxx" />
                 <button>Send</button>
               </div>
             </form>
@@ -136,6 +136,9 @@
     <footer>
       <h3>Dmytro Hushchin</h3>
     </footer>
+    <div class="loader"></div>
+    <div class="modal"><p></p></div>
+    <div class="overlay"></div>
     <script src="{{ url_for('static', filename='js/ReadForm.js') }}"></script>
   </body>
 </html>

@@ -3,34 +3,45 @@ const HttpMethods = {
   POST: "POST",
 };
 
+function showModal(msg) {
+  modal.classList.add("block");
+  loader.classList.remove("block");
+  document.querySelector(".modal > p").innerText = msg;
+}
+
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
+const loader = document.querySelector(".loader");
+
 const form = document.querySelector(".form");
 
-const callApi = ({ data, method = HttpMethods.GET }) => {
-  return fetch(`https://dhushchin-first-website.herokuapp.com/mail`, {
+overlay.addEventListener("click", () => {
+  modal.classList.remove("block");
+  loader.classList.remove("block");
+  overlay.classList.remove("block");
+  form.reset();
+});
+
+const callApi = async ({ data, method = HttpMethods.GET }) => {
+  const response = await fetch("/mail", {
     method,
     body: data ? JSON.stringify(data) : null,
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-  })
-    .then((response) => response.json())
-    .catch((err) => console.err(`Error fetch request -> ${err}`));
+  });
+  return await response.json();
 };
 
 const getFormData = (form) => {
-  const formData = {};
-  new FormData(form).forEach((value, key) => {
-    formData[key] = value;
-  });
-  return formData;
-};
-
-const clearFields = (form) => {
-  const fields = form.querySelectorAll("input");
-  for (const field of fields) {
-    field.value = "";
-  }
+  const temp = Array.from(form.elements).map((elem) => elem.value);
+  temp.splice(-1);
+  return Object.assign(
+    ...["name", "surname", "age", "email", "phone"].map((n, i) => ({
+      [n]: temp[i],
+    }))
+  );
 };
 
 const sendHandler = async () => {
@@ -44,17 +55,20 @@ const sendHandler = async () => {
 
     if (response.error) {
       throw response;
-    } else {
-      clearFields(form);
-      alert(response);
-      return;
     }
+
+    showModal(response);
+    return;
   } catch (err) {
-    throw new Error(err);
+    showModal(err);
+  } finally {
+    form.reset();
   }
 };
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  overlay.classList.add("block");
+  loader.classList.add("block");
   sendHandler();
 });

@@ -4,7 +4,10 @@
   "rules": {
     "sonarjs/elseif-without-else": 1
   },
+  "extends": ["eslint:recommended", "plugin:sonarjs/recommended"],
   "parserOptions": {
     "ecmaVersion": 2017
-  }
+  },
+  "rules": {},
+  "plugins": ["sonarjs"]
 }

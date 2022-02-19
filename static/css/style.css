@@ -19,10 +19,10 @@ table td {
 header {
   width: 100%;
   max-height: 15vh;
-  min-height: 5vh;
+  min-height: 15vh;
   max-width: 100%;
   min-width: 100%;
-  height: 15vh;
+  /* height: 15vh; */
   background-color: var(--color-header-footer);
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ header > p {
   min-width: 100%;
   max-width: 100%;
   min-height: 70vh;
-  max-height: 100%;
+  /* max-height: auto; */
   height: auto;
   display: flex;
   flex-direction: row;
@@ -238,19 +238,27 @@ main > p,
   background-color: var(--light-color);
   display: flex;
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 50vh;
   height: auto;
 }
 
 .left > form {
   width: 100%;
   text-align: center;
-  height: auto;
+  min-height: 20%;
+  margin: 30% 0;
 }
+
+/* .info > aside {
+  background-color: var(--light-color);
+  min-height: 25vh;
+  width: 40%;
+  height: auto;
+} */
 
 .info > aside {
   background-color: var(--light-color);
-  min-height: 25vh;
+  /* min-height: 25vh; */
   width: 40%;
   height: auto;
 }
@@ -266,6 +274,7 @@ main > p,
   height: 100%;
   margin-top: 10%;
   margin-bottom: 5%;
+  padding: 10%;
 }
 
 .circle-block {
@@ -289,7 +298,6 @@ main > p,
   justify-content: center;
   font-size: 16px;
   text-align: center;
-  margin-top: 5%;
 }
 
 .con-form > h2 {
@@ -317,18 +325,19 @@ main > p,
   padding: auto;
   text-transform: uppercase;
   width: 60%;
-  height: 20%;
+  min-height: 60%;
   margin: 0 auto;
 }
 
 .con-form > input {
   background-color: var(--white-color);
   border: none;
+  border-radius: 10px;
   width: 80%;
   font-family: var(--font-mont);
   font-size: 100%;
   padding: 4%;
-  height: 5%;
+  min-height: 20%;
   margin: 5% auto;
 }
 
@@ -383,16 +392,10 @@ main > p,
   border-radius: 10px;
 }
 
-.info > aside {
-  background-color: var(--light-color);
-  min-height: 25vh;
-  width: 40%;
-  height: auto;
-}
-
 footer {
   width: 100%;
-  height: 15vh;
+  min-height: 15vh;
+  max-height: 15vh;
   background-color: var(--color-header-footer);
   display: flex;
   align-items: center;

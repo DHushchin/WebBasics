@@ -22,15 +22,15 @@ function showModal(msg) {
   document.querySelector("#modal > p").innerText = msg;
 }
 
-const overlay = document.getElementById("overlay");
-const modal = document.getElementById("modal");
+// const overlay = document.getElementById("overlay");
+// const modal = document.getElementById("modal");
 
-overlay.addEventListener("click", () => {
-  overlay.classList.remove("block");
-  overlay.classList.add("none");
-  modal.classList.remove("block");
-  modal.classList.add("none");
-});
+// overlay.addEventListener("click", () => {
+//   overlay.classList.remove("block");
+//   overlay.classList.add("none");
+//   modal.classList.remove("block");
+//   modal.classList.add("none");
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1 завдання - Поміняйте місцями тексти, позначені «1» та «6»
@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const text1 = document.querySelector("header>p");
   const text2 = document.querySelector(".info>aside>p");
-
   const change = new ChangePlaceText(text1, text2);
 
   change.changePlace();
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const block = document.querySelector(".info>aside");
-  const colors = document.querySelectorAll(".info>aside p");
+  const colors = document.querySelectorAll(".info>aside>ul>li>p");
 
   const changeCol = new ChangeColor(block);
 

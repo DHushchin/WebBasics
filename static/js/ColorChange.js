@@ -22,15 +22,15 @@ function showModal(msg) {
   document.querySelector("#modal > p").innerText = msg;
 }
 
-// const overlay = document.getElementById("overlay");
-// const modal = document.getElementById("modal");
+const overlay = document.getElementById("overlay");
+const modal = document.getElementById("modal");
 
-// overlay.addEventListener("click", () => {
-//   overlay.classList.remove("block");
-//   overlay.classList.add("none");
-//   modal.classList.remove("block");
-//   modal.classList.add("none");
-// });
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("block");
+  overlay.classList.add("none");
+  modal.classList.remove("block");
+  modal.classList.add("none");
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1 завдання - Поміняйте місцями тексти, позначені «1» та «6»
@@ -72,14 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     showResult() {
-      this.val.querySelector(
-        "p"
-      ).innerText = `Radius: ${this.radius}, PI: ${this.pi}`;
-      this.val.querySelector("h3").innerText = `Answer: ${this.areaCompute()}`;
+      this.val.querySelector("p").innerText = `Radius: ${this.radius}`;
+      this.val.querySelector("h3").innerText = `Area: ${this.areaCompute()}`;
     }
   }
 
-  const circleValues = document.querySelector(".circle__info");
+  const circleValues = document.querySelector(".circle-info");
 
   const area = new AreaCircle(circleValues);
 
